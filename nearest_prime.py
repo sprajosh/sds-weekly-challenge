@@ -1,7 +1,6 @@
 def isprime(num):
-    prime = True
-    for y in xrange(2, int(num**0.5)+1):
-        if num % y ==0:
+    for x in xrange(2, int(num**0.5)+1):
+        if num % x ==0:
             return False
     else:
         return True
@@ -12,22 +11,20 @@ def larger(num):
         num+=1
     while not found:
         if isprime(num):
-            found = True
+            return num
         else:
             num+=2
-    return num
             
 def smaller(num):
     found = False
     if num%2 == 0:
         num-=1
-    while not found and num > 0:
+    while not found and num > 2:
         if isprime(num):
-            found = True
+            return num
         else:
             num-=2
-    return num
-
+    return 2
 
 num = input()
 print larger(num+1),  num, smaller(num-1)
