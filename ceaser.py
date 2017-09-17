@@ -8,8 +8,6 @@ for x in set(s):
 		new_char = ord(x)+key
 		if (97 <= new_char <= 122) or (65 <= new_char <= 90):
 			s = s.replace(x, chr(new_char))
-		elif new_char > 122:
-			s = s.replace(x, chr(new_char-26))
-		elif new_char > 90:
+		else:
 			s = s.replace(x, chr(new_char-26))
 print(s)
